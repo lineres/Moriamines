@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" id="listView" fx:id="listView" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: dddddd;"
+            stylesheets="@../CSS/PartieGUI.css" xmlns="http://javafx.com/javafx/16" fx:controller="com.morialog.moriamines.GUIs.PartieGUI">
+    <top>
+        <MenuBar fx:id="partieGuiMenuBar" BorderPane.alignment="CENTER">
+            <Menu mnemonicParsing="false" text="Game">
+                <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit"/>
+                <MenuItem mnemonicParsing="false" onAction="#saveAndExit" text="Save and exit"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Element">
+                <MenuItem mnemonicParsing="false" onAction="#showRandomNotUnlockedElement" text="Show random not unlocked element"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Informations">
+                <MenuItem mnemonicParsing="false" onAction="#playerInfo" text="Player info" />
+                <MenuItem mnemonicParsing="false" onAction="#gameRules" text="Your goal &amp; How to play" />
+            </Menu>
+        </MenuBar>
+    </top>
+    <right>
+        <ListView fx:id="listPane" accessibleRole="IMAGE_VIEW" minHeight="0.0" minWidth="130.0" prefHeight="375.0" prefWidth="135.0" BorderPane.alignment="CENTER" />
+    </right>
+    <bottom>
+        <Button alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="130.0" mnemonicParsing="false" onAction="#cleanTab" prefWidth="135.0" text="Clean Tab" textAlignment="JUSTIFY" BorderPane.alignment="CENTER_RIGHT">
+            <effect>
+                <InnerShadow>
+                    <color>
+                        <Color red="0.6710526347160339" green="0.6151315569877625" blue="0.6151315569877625" />
+                    </color>
+                </InnerShadow>
+            </effect>
+        </Button>
+    </bottom>
+    <center>
+        <Pane fx:id="gamePane" onDragOver="#gamePaneOnDragOver" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="scoreLabel" layoutX="14.0" layoutY="312.0" prefHeight="58.0" prefWidth="156.0" textFill="#000000c1">
+                    <font>
+                        <Font size="40.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </center>
+</BorderPane>

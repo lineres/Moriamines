@@ -1,0 +1,12 @@
+#listPane{
+	-fx-background-color: rgba( 251, 252, 252 ,0.2);
+}
+.list-cell{
+	-fx-background-color:#00000000;
+}
+.list-cell:focused{
+    -fx-background-color:#b0b0b0/* #03eb31*/;
+}
+#partieGuiMenuBar{
+	-fx-background-color: rgba( 251, 252, 252 ,0.7);
+}

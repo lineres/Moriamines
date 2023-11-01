@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.*?>
+<BorderPane minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: dddddd;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.morialog.moriamines.GUIs.Settings">
+
+   <bottom>
+      <Button mnemonicParsing="false" onAction="#returnButtonEvent" text="Return to the main menu" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="20.0"/>
+         </BorderPane.margin>
+      </Button>
+   </bottom>
+   <top>
+      <Label text="Settings" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="37.0" />
+         </font>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </Label>
+   </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="348.0" prefWidth="782.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label prefHeight="36.0" prefWidth="184.0" text="Profile settings : ">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" text="Current profile : ">
+                           <font>
+                              <Font name="DejaVu Sans Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="profileSelector" onHidden="#onProfileSelectorAction" onShown="#onProfileSelectorAction" prefHeight="26.0" prefWidth="144.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button minHeight="30.0" mnemonicParsing="false" onAction="#createNewProfileEvent" prefHeight="20.0" prefWidth="150.0" text="Create new profile">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="DejaVu Sans Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button minHeight="30.0" mnemonicParsing="false" onAction="#resetCurrentProfileEvent" prefHeight="20.0" prefWidth="150.0" text="Reset current profile">
+                           <font>
+                              <Font name="DejaVu Sans Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="30.0" mnemonicParsing="false" onAction="#deleteCurrentProfileEvent" prefHeight="30.0" prefWidth="150.0" text="Delete current profile">
+                           <font>
+                              <Font name="DejaVu Sans Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <Label prefHeight="36.0" prefWidth="178.0" text="Audio settings : ">
+                  <font>
+                     <Font size="25.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets top="10.0" />
+                  </VBox.margin>
+               </Label>
+               <HBox alignment="CENTER" prefHeight="91.0" prefWidth="550.0">
+                  <CheckBox fx:id="backgroundMusicCheckBox" mnemonicParsing="false" onAction="#changeBackgroundMusic" selected="true">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </CheckBox>
+                  <Label onMouseClicked="#changeBackgroundMusicLabelClicked" text="Background music">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="50.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="Volume:">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Slider fx:id="backgroundMusicSlider" blockIncrement="5.0" majorTickUnit="10.0" minorTickCount="1" onMouseClicked="#backgroundMusicSliderScroll" onMouseDragged="#backgroundMusicSliderScroll" prefHeight="0.0" prefWidth="300.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="50.0">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Slider>
+               </HBox>
+               <HBox alignment="CENTER" prefHeight="91.0" prefWidth="550.0">
+                  <children>
+                     <CheckBox fx:id="effectsSoundsCheckBox" mnemonicParsing="false" onAction="#changeEffectsMusic" selected="true">
+                        <HBox.margin>
+                           <Insets right="10.0" />
+                        </HBox.margin>
+                     </CheckBox>
+                     <Label onMouseClicked="#changeEffectsMusicClicked" text="Effects sound">
+                        <font>
+                           <Font size="19.0" />
+                        </font>
+                        <HBox.margin>
+                           <Insets right="50.0" />
+                        </HBox.margin>
+                     </Label>
+                     <Label text="Volume:">
+                        <font>
+                           <Font size="19.0" />
+                        </font>
+                     </Label>
+                     <Slider fx:id="effectsSoundsSlider" blockIncrement="5.0" majorTickUnit="10.0" minorTickCount="1" onMouseClicked="#effectsSoundSliderScroll" onMouseDragged="#effectsSoundSliderScroll" prefHeight="0.0" prefWidth="300.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="50.0">
+                        <HBox.margin>
+                           <Insets left="10.0" top="5.0" />
+                        </HBox.margin>
+                     </Slider>
+                  </children>
+               </HBox>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label prefHeight="51.0" prefWidth="249.0" text="Background settings : ">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" text="Background Color: ">
+                           <font>
+                              <Font name="DejaVu Sans Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <ColorPicker fx:id="colorPicker" editable="true" nodeOrientation="LEFT_TO_RIGHT" onAction="#colorPicker" prefHeight="26.0" prefWidth="144.0">
+                           <value>
+                              <Color red="0.8666666746139526" green="0.8666666746139526" blue="0.8666666746139526" />
+                           </value>
+                        </ColorPicker>
+                        <ComboBox fx:id="bgImage" onHidden="#bgImageHiddenAction" onShown="#bgImageShownAction" prefHeight="26.0" prefWidth="144.0" promptText="Choose a skin" />
+                        <Button minHeight="30.0" mnemonicParsing="false" onAction="#darkMode" prefHeight="20.0" prefWidth="144.0" text="set dark mode">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="DejaVu Sans Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#bgReset" text="Background Reset" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label onMouseClicked="#changeFullScreenLabelClicked" text="Full screen mode:">
+                     <font>
+                        <Font name="DejaVu Serif Bold" size="18.0"/>
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="fullscreenCheckBox" mnemonicParsing="false" onAction="#changeFullScreen">
+                     <HBox.margin>
+                        <Insets left="5.0"/>
+                     </HBox.margin>
+                  </CheckBox>
+                  <Button mnemonicParsing="false" onAction="#deleteAllSettingsOnAction" text="Delete all settings">
+                     <HBox.margin>
+                        <Insets left="40.0"/>
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
